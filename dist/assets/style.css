@@ -234,28 +234,45 @@ p { margin: 0; color: var(--muted); }
 .legal-meta { margin-bottom: 30px; color: #888ba4; font-size: .85rem; }
 .language-switcher {
   width: fit-content;
-  margin: 30px auto 0;
-  padding: 6px 8px 6px 14px;
-  display: flex;
+  margin: 0 4px;
+  padding: 4px 8px 4px 10px;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
   border: 1px solid var(--line);
-  border-radius: 14px;
-  background: rgba(255,255,255,.06);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .05);
   backdrop-filter: blur(14px);
   color: #cfd1e1;
-  font-size: .8rem;
-  font-weight: 700;
+  font-size: .82rem;
+  font-weight: 600;
+  transition: border-color .25s ease, background .25s ease;
+}
+.language-switcher:hover, .language-switcher:focus-within {
+  border-color: rgba(255, 255, 255, .24);
+  background: rgba(255, 255, 255, .08);
+}
+.language-switcher .lang-icon {
+  font-size: .95rem;
+  line-height: 1;
 }
 .language-switcher select {
-  min-width: 128px;
-  padding: 8px 34px 8px 11px;
+  min-width: auto;
+  padding: 5px 4px;
   color: #fff;
-  border: 1px solid var(--line);
-  border-radius: 9px;
+  border: none;
+  border-radius: 8px;
   outline: none;
-  background: #12142a;
+  background: transparent;
+  font-family: inherit;
+  font-size: .82rem;
+  font-weight: 600;
   cursor: pointer;
+}
+.language-switcher select option {
+  background: #0d0f22;
+  color: #fff;
+  padding: 6px 10px;
 }
 
 .about-grid, .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
@@ -315,6 +332,8 @@ p { margin: 0; color: var(--muted); }
   .nav-links.open { display: flex; animation: menuIn .2s ease; }
   @keyframes menuIn { from { opacity: 0; transform: translateY(-8px); } }
   .nav-link { padding: 12px 14px; }
+  .language-switcher { width: 100%; box-sizing: border-box; margin: 6px 0; padding: 10px 14px; justify-content: space-between; }
+  .language-switcher select { font-size: .88rem; padding: 4px 8px; }
   .nav-cta { margin: 6px 0 0; }
   .menu-btn { display: grid; place-items: center; }
   .hero-copy { width: 82%; }

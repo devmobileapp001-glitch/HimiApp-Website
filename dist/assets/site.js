@@ -1,14 +1,14 @@
 const page = document.body.dataset.page || '';
 
 const mainNav = document.querySelector('.nav-links');
-if (mainNav && !mainNav.querySelector('a[href="privacy.html"]')) {
+if (mainNav && !mainNav.querySelector('a[href*="privacy"]')) {
   const privacyLink = document.createElement('a');
   privacyLink.className = 'nav-link';
   privacyLink.dataset.nav = 'privacy';
   privacyLink.href = location.pathname.endsWith('/privacy-vi.html') ? 'privacy-vi.html' : 'privacy.html';
   privacyLink.textContent = document.documentElement.lang === 'en' ? 'Privacy' : 'Quyền riêng tư';
-  const contactLink = mainNav.querySelector('.nav-cta');
-  mainNav.insertBefore(privacyLink, contactLink);
+  const target = mainNav.querySelector('.language-switcher, .nav-cta');
+  mainNav.insertBefore(privacyLink, target);
 }
 
 document.querySelectorAll('[data-nav]').forEach(link => {
